@@ -1,13 +1,18 @@
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { FiInstagram } from "react-icons/fi";
+import img from "../assets/programming.jpg";
 
 const Footer = () => {
     return (
         <footer className="bg-slate-800 text-white lg:px-40 px-4 py-20">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div className="mb-4 md:mb-0">
-                    <span className="text-3xl font-semibold text-red-800 py-2">Logo</span>
-                    <p className="text-[16px] my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus libero saepe consequuntur ab provident maxime nulla deserunt! Porro non dolores voluptatem animi nisi aliquam aperiam facere sunt recusandae veritatis. Quibusdam!</p>
+                    <img
+                        src={img}
+                        alt="gif"
+                        className="h-20 w-30 object-contain border border-white b_glow rounded"
+                    />
+                    <p className="text-[25px] my-4">Thanks for Watch!</p>
                 </div>
 
                 <div>

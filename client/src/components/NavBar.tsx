@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-scroll";
 import { FaTimes } from "react-icons/fa";
 import { CiMenuFries } from "react-icons/ci";
+import gif from "../assets/programming.gif";
 
 const NavBar = () => {
 
@@ -38,9 +39,13 @@ const NavBar = () => {
 
     return (
         <nav>
-            <div className="h-10vh flex justify-between z-50 text-white lg:py-5 px-20 py-4 border-b border-slate-800">
+            <div className="h-10vh flex justify-between z-50 text-white lg:py-5 px-20 border-b border-slate-800">
                 <div className="flex items-center flex-1">
-                    <span className="text-3xl font-bold">Logo</span>
+                    <img
+                        src={gif}
+                        alt="gif"
+                        className="h-24 w-30 object-contain border border-white b_glow rounded"
+                    />
                 </div>
 
                 <div className="lg:flex md:flex lg:flex-1 items-center justify-end font-normal hidden">

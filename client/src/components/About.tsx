@@ -23,7 +23,18 @@ const About = () => {
 
             <div className="h-full lg:py-40 flex flex-col justify-center lg:items-start items-center text-white">
                 <h1 data-aos="fade-right" className="text-[52px] text-center font-semibold mb-8 leading-normal text-red-500 uppercase">About Me</h1>
-                <p data-aos="fade-left">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, quis nihil ducimus fugiat soluta doloribus molestiae libero voluptatem debitis labore id sunt illum possimus doloremque commodi! Deleniti explicabo voluptas minus?</p>
+                <p 
+                    data-aos="fade-left"
+                >
+                    Passionate about technology since childhood, my journey as a developer began with two 
+                    semesters in Systems Engineering at the Universidad Nacional Abierta (UNA) in Venezuela, 
+                    where I gained a solid foundation in C++. Influenced by family and friends, I now thrive as 
+                    a Full Stack Web Developer, showcasing expertise in JavaScript, TypeScript, ReactJS, Node, 
+                    and proficiency in technologies like HTML, CSS, Express, Sequelize, PostgreSQL, Git, 
+                    and agile methodologies such as Scrum. Driven by constant curiosity and the enjoyment 
+                    of tackling technological challenges, I am dedicated to continuous improvement and 
+                    acquiring new skills! 💻
+                </p>
 
                 <div className="flex mt-8 gap-2">
                     <div className="flex items-center justify-center">

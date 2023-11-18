@@ -19,9 +19,17 @@ const Banner = () => {
 
     return ( 
         <div className="lg:px-56 px-10 lg:py-0 py-20 text-left gap-5 lg:text-start flex lg:flex-row flex-col-reverse justify-between lg:gap-28 items-center">
-            <div className="h-full lg:py-40 flex flex-col justify-center lg:items-start items-center text-white">
+            <div className="h-full lg:py-20 flex flex-col justify-center lg:items-start items-center text-white">
                 <h1 data-aos="fade-right" className="text-[52px] text-center font-semibold mb-8 leading-normal uppercase">Welcome to <span className="text-red-500">My Website</span></h1>
-                <p data-aos="fade-left">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, quis nihil ducimus fugiat soluta doloribus molestiae libero voluptatem debitis labore id sunt illum possimus doloremque commodi! Deleniti explicabo voluptas minus?</p>
+                <p 
+                    data-aos="fade-left"
+                >
+                    Nice to mee you! I'm David Olivo Alfonso Rodríguez, <span className="text-red-500">Fullstack Web Developer</span>. 
+                    I'm 21 years old, Venezuelan living in Argentina. I have good
+                    capacity to adapt and learn. Very interested in acquire new
+                    knowledge. Fan of videogames and tecnologies. Like to analize
+                    thoroughly different situations. 
+                </p>
 
                 <div className="flex mt-8 gap-2">
                     <div className="flex items-center justify-center">
