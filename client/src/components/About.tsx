@@ -25,6 +25,7 @@ const About = () => {
                 <h1 data-aos="fade-right" className="text-[52px] text-center font-semibold mb-8 leading-normal text-red-500 uppercase">About Me</h1>
                 <p 
                     data-aos="fade-left"
+                    className="text-[20px]"
                 >
                     Passionate about technology since childhood, my journey as a developer began with two 
                     semesters in Systems Engineering at the Universidad Nacional Abierta (UNA) in Venezuela, 

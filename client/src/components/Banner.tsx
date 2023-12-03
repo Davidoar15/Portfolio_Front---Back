@@ -23,6 +23,7 @@ const Banner = () => {
                 <h1 data-aos="fade-right" className="text-[52px] text-center font-semibold mb-8 leading-normal uppercase">Welcome to <span className="text-red-500">My Website</span></h1>
                 <p 
                     data-aos="fade-left"
+                    className="text-[20px]"
                 >
                     Nice to mee you! I'm David Olivo Alfonso Rodríguez, <span className="text-red-500">Fullstack Web Developer</span>. 
                     I'm 21 years old, Venezuelan living in Argentina. I have good
