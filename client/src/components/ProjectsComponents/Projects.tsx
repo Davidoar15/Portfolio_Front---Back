@@ -22,7 +22,7 @@ const Projects = ({ projects }: { projects: TypeProjects | undefined }) => {
                 <button
                     key={i}
                     onClick={() => changePage(i)}
-                    className={`flex justify-center items-center rounded-xl border-4 border-red-600 text-white bg-slate-800 p-2 w-9 h-9 ${currentPage === i ? "b_glow cursor-pointer font-semibold" : "cursor-not-allowed bg-gray-600"}`}
+                    className={`flex justify-center items-center rounded-xl border-4 border-red-600 text-white bg-slate-800 p-2 w-9 h-9 cursor-pointer ${currentPage === i ? "b_glow font-semibold" : "bg-gray-600"}`}
                 >
                     {i}
                 </button>
@@ -60,7 +60,7 @@ const Projects = ({ projects }: { projects: TypeProjects | undefined }) => {
             }
 
             <div className="mt-20 flex flex-row justify-center items-center gap-20">
-                <button
+                {/* <button
                     disabled={currentPage === 1}
                     onClick={() => changePage(currentPage - 1)}
                     className={`flex justify-center items-center p-2 w-15 h-15`}
@@ -68,13 +68,13 @@ const Projects = ({ projects }: { projects: TypeProjects | undefined }) => {
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-badge-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 17h6l-4 -5l4 -5h-6l-4 5z" />
                     </svg>
-                </button>
+                </button> */}
 
                 <div className="flex flex-row gap-2">
                     {renderPageNumbers()}
                 </div>
 
-                <button
+                {/* <button
                     disabled={(projects?.length 
                                 ? endIndex >= projects.length
                                 : true)}
@@ -84,7 +84,7 @@ const Projects = ({ projects }: { projects: TypeProjects | undefined }) => {
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-badge-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M13 7h-6l4 5l-4 5h6l4 -5z" />
                     </svg>
-                </button>
+                </button> */}
             </div>
         </div>
     );
