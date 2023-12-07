@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai"
 import { FiInstagram } from "react-icons/fi"
-import img from "../assets/Profile.png";
+import img from "../../assets/Profile.png";
 
 import AOS from "aos";
 import "aos/dist/aos.css";

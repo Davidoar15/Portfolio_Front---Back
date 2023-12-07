@@ -1,6 +1,6 @@
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { FiInstagram } from "react-icons/fi";
-import img from "../assets/programming.jpg";
+import img from "../../assets/programming.jpg";
 
 const Footer = () => {
     return (

@@ -1,5 +1,5 @@
-import img from "../assets/Profile.png";
-import CV from "../assets/CV David Olivo Alfonso Rodríguez (English).pdf";
+import img from "../../assets/Profile.png";
+import CV from "../../assets/CV David Olivo Alfonso Rodríguez (English).pdf";
 
 const About = () => {
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-scroll";
 import { FaTimes } from "react-icons/fa";
 import { CiMenuFries } from "react-icons/ci";
-import gif from "../assets/programming.gif";
+import gif from "../../assets/programming.gif";
 
 const NavBar = () => {
 

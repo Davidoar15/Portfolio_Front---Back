@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Project, TypeProjects } from "../interfaces";
+import { Project, TypeProjects } from "../types";
 
 export const getProjects = async () => {
     try {

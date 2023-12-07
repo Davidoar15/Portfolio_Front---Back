@@ -1,4 +1,4 @@
-import { ServiceImg } from "../Obj-Img";
+import { ServiceImg } from "../../Obj-Img";
 
 const Services = () => {
 

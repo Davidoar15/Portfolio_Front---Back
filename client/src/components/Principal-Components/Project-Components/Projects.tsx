@@ -1,8 +1,12 @@
-import { TypeProjects } from "../../interfaces";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { TypeProjects } from "../../../types";
 
 const Projects = ({ projects }: { projects: TypeProjects | undefined }) => {
 
-    const pageSize = 8; let currentPage = 1; 
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const pageSize = 8; 
 
     const startIndex = (currentPage-1)*pageSize;
     const endIndex = startIndex + pageSize;
@@ -12,7 +16,7 @@ const Projects = ({ projects }: { projects: TypeProjects | undefined }) => {
     if (projects?.length) totalPages = Math.ceil(projects?.length/pageSize);
 
     const changePage = (page: number) => {
-        currentPage = page;
+        setCurrentPage(page);
     };
 
     const renderPageNumbers = () => {
@@ -32,8 +36,8 @@ const Projects = ({ projects }: { projects: TypeProjects | undefined }) => {
     };
 
     return (
-        <div id="Projects" className="p-20 flex flex-col items-center justify-center">
-            <h1 data-aos="fade-up" className="text-[52px] text-center font-semibold mb-20 leading-normal uppercase text-red-500">Realized Projects</h1>
+        <div id="Projects" data-aos="fade-up" className="p-20 flex flex-col items-center justify-center">
+            <h1 className="text-[52px] text-center font-semibold mb-20 leading-normal uppercase text-red-500">Realized Projects</h1>
 
             {
                 paginatedProjects?.length ? (
@@ -41,21 +45,22 @@ const Projects = ({ projects }: { projects: TypeProjects | undefined }) => {
                         {paginatedProjects.map((project) => (
                             <div 
                                 key={project._id}
-                                data-aos="fade-up"
                                 className="project-item"
                             >
-                                <img 
-                                    key={project._id}
-                                    src={project.images[0]}
-                                    alt={project.title}
-                                    className="project-image text-[26px] flex items-center justify-center rounded-3xl p-1 border-2 border-red-800 b_glow"
-                                />
-                                <h4 className="text-[18px] text-center font-semibold mt-5 leading-normal text-red-500">{project.title}</h4>
+                                <NavLink to={`/project/${project._id}`}>
+                                    <img 
+                                        key={project._id}
+                                        src={project.images[0]}
+                                        alt={project.title}
+                                        className="project-image text-[26px] flex items-center justify-center rounded-3xl p-1 border-2 border-red-800 b_glow"
+                                    />
+                                </NavLink>
+                                <h4 className="text-[18px] text-center font-semibold mt-4 leading-normal text-red-500">{project.title}</h4>
                             </div>
                         ))}
                     </div>
                 ) : (
-                    <h2 data-aos="fade-up" className="text-[45px] text-center font-semibold mb-20 leading-normal uppercase text-red-500">Loading Projects...</h2>
+                    <h2 className="text-[45px] text-center font-semibold mb-20 leading-normal uppercase text-red-500">Loading Projects...</h2>
                 )
             }
 
