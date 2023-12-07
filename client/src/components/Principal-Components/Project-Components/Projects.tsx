@@ -52,7 +52,7 @@ const Projects = ({ projects }: { projects: TypeProjects | undefined }) => {
                                         key={project._id}
                                         src={project.images[0]}
                                         alt={project.title}
-                                        className="project-image text-[26px] flex items-center justify-center rounded-3xl p-1 border-2 border-red-800 b_glow"
+                                        className="project-images text-[26px] flex items-center justify-center rounded-3xl p-1 border-2 border-red-800 b_glow"
                                     />
                                 </NavLink>
                                 <h4 className="text-[18px] text-center font-semibold mt-4 leading-normal text-red-500">{project.title}</h4>
