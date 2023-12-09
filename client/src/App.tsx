@@ -1,11 +1,10 @@
-import { useEffect } from "react"
-import Principal from "./components/Principal"
-import Details from "./components/Principal-Components/Project-Components/Details"
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom"
+import { useEffect } from "react";
+import Principal from "./components/Principal";
+import Details from "./components/Principal-Components/Project-Components/Details";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Error from "./components/Error";
 
 function App() {
-
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -21,7 +20,7 @@ function App() {
     if (!isValidRoute) {
       navigate("/error");
     }
-  }, [location.pathname, navigate])
+  }, [location.pathname, navigate]);
 
   return (
     <div>
@@ -31,7 +30,7 @@ function App() {
         <Route path="/*" element={<Error />} />
       </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
