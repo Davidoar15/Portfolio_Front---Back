@@ -1,11 +1,27 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getProject } from "../../../actions";
-import { Project } from "../../../types";
+import {
+  Project,
+  TypeHandleLanguageChange,
+  TypeCurrentLanguage,
+} from "../../../types";
 import { Link } from "react-router-dom";
 import { BallTriangle } from "react-loader-spinner";
+import { NavLink } from "react-router-dom";
+import en from "../../../assets/languages/estados-unidos.png";
+import es from "../../../assets/languages/espana.png";
+import { useTranslation } from "react-i18next";
 
-const Details = () => {
+const Details = ({
+  handleLanguageChange,
+  currentLanguage,
+}: {
+  handleLanguageChange: TypeHandleLanguageChange;
+  currentLanguage: TypeCurrentLanguage;
+}) => {
+  const { t } = useTranslation("global");
+
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -81,6 +97,47 @@ const Details = () => {
         </div>
       ) : (
         <div className="flex flex-col justify-center items-center bg-slate-900 min-h-screen">
+          <div className="flex flex-row justify-around items-center w-full">
+            <NavLink to={"/"}>
+              <button className="border-4 border-red-600 my-2 p-1 bg-slate-500 hover:bg-white rounded-xl cursor-pointer">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="icon icon-tabler icon-tabler-home"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+                  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                </svg>
+              </button>
+            </NavLink>
+            {currentLanguage === "en" ? (
+              <>
+                <img
+                  src={en}
+                  className="w-8 h-8 cursor-pointer"
+                  onClick={() => handleLanguageChange("es")}
+                />
+              </>
+            ) : (
+              <>
+                <img
+                  src={es}
+                  className="w-8 h-8 cursor-pointer"
+                  onClick={() => handleLanguageChange("en")}
+                />
+              </>
+            )}
+          </div>
+
           <div className="flex flex-col md:flex-row gap-10 mx-5 mt-2">
             {paginatedImgs?.length ? (
               <div className="flex flex-col items-center gap-2 md:w-[70%]">
@@ -119,7 +176,9 @@ const Details = () => {
 
           <div className="flex flex-col justify-center items-center md:flex-row gap-10 mx-5 my-5">
             <div className="flex flex-col items-center gap-2">
-              <h4 className="text-blue-600 font-semibold font-mono">Stack</h4>
+              <h4 className="text-blue-600 font-semibold font-mono">
+                {t("Details.stack", { lng: currentLanguage })}
+              </h4>
 
               <div className="flex flex-wrap justify-center items-center px-2 py-1 rounded-ss-3xl rounded-br-3xl b_glow">
                 {project?.technologies ? (
@@ -142,7 +201,7 @@ const Details = () => {
 
             <div className="flex flex-col items-center w-full md:w-96 mt-5 md:mt-0 gap-2">
               <h4 className="text-blue-600 font-semibold font-mono">
-                Check Out!
+                {t("Details.checkOut", { lng: currentLanguage })}
               </h4>
 
               <div className="border-double border-4 rounded-xl border-white px-2 py-1">

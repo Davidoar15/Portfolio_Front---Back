@@ -1,12 +1,27 @@
 import img from "../../assets/Profile.png";
-import CV from "../../assets/CV David Olivo Alfonso Rodríguez (English).pdf";
+import CV_EN from "../../assets/CV/CV David Olivo Alfonso Rodríguez (English).pdf";
+import CV_ES from "../../assets/CV/CV David Olivo Alfonso Rodríguez (Español).pdf";
+import { TypeCurrentLanguage } from "../../types";
+import { useTranslation } from "react-i18next";
 
-const About = () => {
+const About = ({
+  currentLanguage,
+}: {
+  currentLanguage: TypeCurrentLanguage;
+}) => {
+  const { t } = useTranslation("global");
+
   const handleDowload = () => {
     const link = document.createElement("a");
-    link.href = CV;
-    link.download = "CV David Olivo Alfonso Rodríguez (English).pdf";
-    link.click();
+    if (currentLanguage === "en") {
+      link.href = CV_EN;
+      link.download = "CV David Olivo Alfonso Rodríguez (English).pdf";
+      link.click();
+    } else {
+      link.href = CV_ES;
+      link.download = "CV David Olivo Alfonso Rodríguez (Español).pdf";
+      link.click();
+    }
   };
 
   return (
@@ -28,19 +43,10 @@ const About = () => {
           data-aos="fade-right"
           className="text-[52px] text-center font-semibold mb-8 leading-normal text-red-500 uppercase"
         >
-          About Me
+          {t("About.title", { lng: currentLanguage })}
         </h1>
         <p data-aos="fade-left" className="text-[20px]">
-          Passionate about technology since childhood, my journey as a developer
-          began with two semesters in Systems Engineering at the Universidad
-          Nacional Abierta (UNA) in Venezuela, where I gained a solid foundation
-          in C++. Influenced by family and friends, I now thrive as a Full Stack
-          Web Developer, showcasing expertise in JavaScript, TypeScript,
-          ReactJS, Node, and proficiency in technologies like HTML, CSS,
-          Express, Sequelize, PostgreSQL, Git, and agile methodologies such as
-          Scrum. Driven by constant curiosity and the enjoyment of tackling
-          technological challenges, I am dedicated to continuous improvement and
-          acquiring new skills! 💻
+          {t("About.text", { lng: currentLanguage })}
         </p>
 
         <div className="flex mt-8 gap-2">
@@ -50,7 +56,7 @@ const About = () => {
                 onClick={handleDowload}
                 className="neno-button shadow-xl hover:shadow-red-800/50 text-white border-2 hover:bg-red-800 border-red-800 rounded-lg py-4 px-8 uppercase relative overflow-hidden"
               >
-                Resume | CV
+                {t("About.cv", { lng: currentLanguage })}
               </button>
             </div>
           </div>

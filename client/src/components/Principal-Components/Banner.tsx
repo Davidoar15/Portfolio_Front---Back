@@ -6,7 +6,16 @@ import img from "../../assets/Profile.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const Banner = () => {
+import { useTranslation } from "react-i18next";
+import { TypeCurrentLanguage } from "../../types";
+
+const Banner = ({
+  currentLanguage,
+}: {
+  currentLanguage: TypeCurrentLanguage;
+}) => {
+  const { t } = useTranslation("global");
+
   useEffect(() => {
     AOS.init({
       easing: "ease-out-quart",
@@ -22,15 +31,10 @@ const Banner = () => {
           data-aos="fade-right"
           className="text-[52px] text-center font-semibold mb-8 leading-normal uppercase"
         >
-          Welcome to <span className="text-red-500">My Website</span>
+          {t("Banner.title", { lng: currentLanguage })}
         </h1>
         <p data-aos="fade-left" className="text-[20px]">
-          Nice to mee you! I'm David Olivo Alfonso Rodríguez,{" "}
-          <span className="text-red-500">Fullstack Web Developer</span>. I'm 21
-          years old, Venezuelan living in Argentina. I have good capacity to
-          adapt and learn. Very interested in acquire new knowledge. Fan of
-          videogames and tecnologies. Like to analize thoroughly different
-          situations.
+          {t("Banner.text", { lng: currentLanguage })}
         </p>
 
         <div className="flex mt-8 gap-2">

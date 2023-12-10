@@ -1,7 +1,15 @@
 import { useForm } from "@formspree/react";
 import { useState, ChangeEvent } from "react";
+import { TypeCurrentLanguage } from "../../types";
+import { useTranslation } from "react-i18next";
 
-const Contact = () => {
+const Contact = ({
+  currentLanguage,
+}: {
+  currentLanguage: TypeCurrentLanguage;
+}) => {
+  const { t } = useTranslation("global");
+
   const [state, handleSubmit] = useForm("xvojnpql");
   const [formValues, setFormValues] = useState({
     name: "",
@@ -12,13 +20,16 @@ const Contact = () => {
   if (state.succeeded) {
     return (
       <div
+        id="Contact"
         data-aos="fade-up"
         className="p-4 lg:p-20 flex flex-col items-center justify-center"
       >
         <h1 className="text-[52px] text-center font-semibold mb-15 leading-normal uppercase text-red-500">
-          Excellent!
+          {t("Contact.postTitle", { lng: currentLanguage })}
         </h1>
-        <p className="text-[48px] text-slate-500 mt-6">Thanks for Contact!</p>
+        <p className="text-[48px] text-slate-500 mt-6">
+          {t("Contact.postMsg", { lng: currentLanguage })}
+        </p>
       </div>
     );
   }
@@ -42,7 +53,7 @@ const Contact = () => {
         data-aos="fade-up"
         className="text-[52px] text-center font-semibold mb-15 leading-normal uppercase text-red-500"
       >
-        Contact with Me!
+        {t("Contact.title", { lng: currentLanguage })}
       </h1>
 
       <form
@@ -56,7 +67,7 @@ const Contact = () => {
             name="name"
             value={formValues.name}
             onChange={handleChange}
-            placeholder="Enter Your Name"
+            placeholder={t("Contact.phName", { lng: currentLanguage })}
             className="w-full lg:my-3 my-4 rounded-lg bg-slate-800 p-4 border-2 border-red-800 b_glow text-xl text-slate-500"
           />
 
@@ -65,7 +76,7 @@ const Contact = () => {
             name="email"
             value={formValues.email}
             onChange={handleChange}
-            placeholder="Enter Your E-mail"
+            placeholder={t("Contact.phEmail", { lng: currentLanguage })}
             className="w-full lg:my-3 my-4 rounded-lg bg-slate-800 p-4 border-2 border-red-800 b_glow text-xl text-slate-500"
           />
         </div>
@@ -76,7 +87,7 @@ const Contact = () => {
           onChange={handleChange}
           cols={20}
           rows={10}
-          placeholder="Write Your Message..."
+          placeholder={t("Contact.phTextarea", { lng: currentLanguage })}
           className="w-full my-3 rounded-lg bg-slate-800 p-4 border-2 border-red-800 b_glow text-xl text-slate-500"
         ></textarea>
 
@@ -88,7 +99,7 @@ const Contact = () => {
                                   isFormEmpty ? "disabled" : "hover:bg-red-800"
                                 }`}
         >
-          Submit
+          {t("Contact.submit", { lng: currentLanguage })}
         </button>
       </form>
     </div>

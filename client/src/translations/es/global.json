@@ -1,0 +1,49 @@
+{
+    "NavBar": {
+        "home": "Inicio",
+        "about": "Sobre Mí",
+        "services": "Servicios",
+        "projects": "Proyectos",
+        "contact": "Contacto"
+    },
+
+    "Details": {
+        "stack": "Stack",
+        "checkOut": "¡Echa un Vistazo!"
+    },
+
+    "Banner": {
+        "title": "¡Bienvenido a mi Sitio Web!",
+        "text": "¡Encantado de conocerte! Soy David Olivo Alfonso Rodríguez, Desarrollador Web Fullstack. Tengo 21 años, soy venezolano viviendo en Argentina. Tengo una buena capacidad de adaptación y aprendizaje. Muy interesado en adquirir nuevos conocimientos. Fanático de los videojuegos y la tecnología. Me gusta analizar a fondo diferentes situaciones."
+    },
+
+    "About": {
+        "title": "Acerca de Mí",
+        "text": "Apasionado por la tecnología desde la infancia, mi trayectoria como desarrollador comenzó con tres semestres en Ingeniería de Sistemas en la Universidad Nacional Abierta (UNA) en Venezuela, donde adquirí una sólida base en C++. Influenciado por familiares y amigos, actualmente prospero como Desarrollador Web Full Stack, exhibiendo experiencia en JavaScript, TypeScript, ReactJS, Node, y habilidades en tecnologías como HTML, CSS, Express, Sequelize, PostgreSQL, Git, y metodologías ágiles como Scrum. Impulsado por una curiosidad constante y el disfrute de enfrentar desafíos tecnológicos, ¡me dedico a la mejora continua y a adquirir nuevas habilidades!",
+        "cv": "Resumen | CV"
+    },
+
+    "Services": "Servicios",
+    
+    "Projects": "Proyectos Realizados",
+
+    "Contact": {
+        "title": "¡Contacta conmigo!",
+        "phName": "Introduzca su Nombre",
+        "phEmail": "Introduzca su E-mail",
+        "phTextarea": "Escribe tu Mensaje...",
+        "submit": "Enviar",
+        "postTitle": "¡Excelente!",
+        "postMsg": "¡Gracias por Contactar!"
+    },
+
+    "Footer": {
+        "thanks": "¡Gracias por Ver!",
+        "services": "Servicios",
+        "webDesign": "Diseño Web",
+        "webDevelopment": "Desarrollo Web",
+        "contact": "Contactos",
+        "phone": "Tlf",
+        "networks": "Sígueme"
+    }
+}

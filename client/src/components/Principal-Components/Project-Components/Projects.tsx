@@ -1,8 +1,17 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { TypeProjects } from "../../../types";
+import { TypeCurrentLanguage, TypeProjects } from "../../../types";
+import { useTranslation } from "react-i18next";
 
-const Projects = ({ projects }: { projects: TypeProjects | undefined }) => {
+const Projects = ({
+  projects,
+  currentLanguage,
+}: {
+  projects: TypeProjects | undefined;
+  currentLanguage: TypeCurrentLanguage;
+}) => {
+  const { t } = useTranslation("global");
+
   const [currentPage, setCurrentPage] = useState(1);
 
   const pageSize = 8;
@@ -43,7 +52,7 @@ const Projects = ({ projects }: { projects: TypeProjects | undefined }) => {
       className="p-20 flex flex-col items-center justify-center"
     >
       <h1 className="text-[52px] text-center font-semibold mb-20 leading-normal uppercase text-red-500">
-        Realized Projects
+        {t("Projects", { lng: currentLanguage })}
       </h1>
 
       {paginatedProjects?.length ? (

@@ -1,0 +1,49 @@
+{
+    "NavBar": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+
+    "Details": {
+        "stack": "Stack",
+        "checkOut": "Check Out!"
+    },
+
+    "Banner": {
+        "title": "Welcome to My Website!",
+        "text": "Nice to mee you! I'm David Olivo Alfonso Rodríguez, Fullstack Web Developer. I'm 21 years old, Venezuelan living in Argentina. I have good capacity to adapt and learn. Very interested in acquire new knowledge. Fan of videogames and tecnologies. Like to analize thoroughly different situations."
+    },
+
+    "About": {
+        "title": "About Me",
+        "text": "Passionate about technology since childhood, my journey as a developer began with three semesters in Systems Engineering at the National Open University (UNA) in Venezuela, where I gained a solid foundation in C++. Influenced by family and friends, I now thrive as a Full Stack Web Developer, showcasing expertise in JavaScript, TypeScript, ReactJS, Node, and proficiency in technologies like HTML, CSS, Express, Sequelize, PostgreSQL, Git, and agile methodologies such as Scrum. Driven by constant curiosity and the enjoyment of tackling technological challenges, I am dedicated to continuous improvement and acquiring new skills! 💻",
+        "cv": "Resume | CV"
+    },
+
+    "Services": "Services",
+
+    "Projects": "Realized Projects",
+
+    "Contact": {
+        "title": "Contact with Me!",
+        "phName": "Enter Your Name",
+        "phEmail": "Enter Your E-mail",
+        "phTextarea": "Write Your Message...",
+        "submit": "Submit",
+        "postTitle": "Excellent!",
+        "postMsg": "Thanks for Contact!"
+    },
+
+    "Footer": {
+        "thanks": "Thanks for Watch!",
+        "services": "Services",
+        "webDesign": "Web Design",
+        "webDevelopment": "Web Development",
+        "contact": "Contacts",
+        "phone": "Phone",
+        "networks": "Follow Me"
+    }
+}

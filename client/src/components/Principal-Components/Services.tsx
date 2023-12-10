@@ -1,6 +1,14 @@
+import { useTranslation } from "react-i18next";
 import { ServiceImg } from "../../Obj-Img";
+import { TypeCurrentLanguage } from "../../types";
 
-const Services = () => {
+const Services = ({
+  currentLanguage,
+}: {
+  currentLanguage: TypeCurrentLanguage;
+}) => {
+  const { t } = useTranslation("global");
+
   return (
     <div
       id="Services"
@@ -10,7 +18,7 @@ const Services = () => {
         data-aos="fade-right"
         className="text-[52px] font-semibold mb-20 leading-normal uppercase text-red-500"
       >
-        Services
+        {t("Services", { lng: currentLanguage })}
       </h1>
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 justify-around gap-20">
         <div data-aos="fade-right" className="flex items-center justify-center">

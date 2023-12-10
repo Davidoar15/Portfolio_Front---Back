@@ -8,9 +8,19 @@ import Projects from "./Principal-Components/Project-Components/Projects";
 import Services from "./Principal-Components/Services";
 import { BallTriangle } from "react-loader-spinner";
 import { getProjects } from "../actions";
-import { TypeProjects } from "../types";
+import {
+  TypeProjects,
+  TypeHandleLanguageChange,
+  TypeCurrentLanguage,
+} from "../types";
 
-function Principal() {
+function Principal({
+  handleLanguageChange,
+  currentLanguage,
+}: {
+  handleLanguageChange: TypeHandleLanguageChange;
+  currentLanguage: TypeCurrentLanguage;
+}) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -54,13 +64,16 @@ function Principal() {
         </div>
       ) : (
         <div className="bg-slate-900 ">
-          <NavBar />
-          <Banner />
-          <About />
-          <Services />
-          <Projects projects={projects} />
-          <Contact />
-          <Footer />
+          <NavBar
+            handleLanguageChange={handleLanguageChange}
+            currentLanguage={currentLanguage}
+          />
+          <Banner currentLanguage={currentLanguage} />
+          <About currentLanguage={currentLanguage} />
+          <Services currentLanguage={currentLanguage} />
+          <Projects projects={projects} currentLanguage={currentLanguage} />
+          <Contact currentLanguage={currentLanguage} />
+          <Footer currentLanguage={currentLanguage} />
         </div>
       )}
     </>

@@ -1,8 +1,25 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Principal from "./components/Principal";
 import Details from "./components/Principal-Components/Project-Components/Details";
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Error from "./components/Error";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { I18nextProvider } from "react-i18next";
+import i18next from "i18next";
+import global_es from "./translations/es/global.json";
+import global_en from "./translations/en/global.json";
+
+i18next.init({
+  interpolation: { escapeValue: false },
+  lng: "en",
+  resources: {
+    en: {
+      global: global_en,
+    },
+    es: {
+      global: global_es,
+    },
+  },
+});
 
 function App() {
   const navigate = useNavigate();
@@ -22,14 +39,41 @@ function App() {
     }
   }, [location.pathname, navigate]);
 
+  const [currentLanguage, setCurrentLanguage] = useState(
+    localStorage.getItem("selectedLanguage") || "en"
+  );
+
+  const handleLanguageChange = (language: string) => {
+    setCurrentLanguage(language);
+    localStorage.setItem("selectedLanguage", language);
+  };
+
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Principal />} />
-        <Route path="/project/:id" element={<Details />} />
-        <Route path="/*" element={<Error />} />
-      </Routes>
-    </div>
+    <I18nextProvider i18n={i18next}>
+      <div>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Principal
+                handleLanguageChange={handleLanguageChange}
+                currentLanguage={currentLanguage}
+              />
+            }
+          />
+          <Route
+            path="/project/:id"
+            element={
+              <Details
+                handleLanguageChange={handleLanguageChange}
+                currentLanguage={currentLanguage}
+              />
+            }
+          />
+          <Route path="/*" element={<Error />} />
+        </Routes>
+      </div>
+    </I18nextProvider>
   );
 }
 
