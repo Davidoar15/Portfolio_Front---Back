@@ -70,7 +70,10 @@ function App() {
               />
             }
           />
-          <Route path="/*" element={<Error />} />
+          <Route
+            path="/*"
+            element={<Error currentLanguage={currentLanguage} />}
+          />
         </Routes>
       </div>
     </I18nextProvider>

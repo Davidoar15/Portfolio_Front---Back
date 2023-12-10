@@ -1,10 +1,17 @@
+type Techs = {
+    name: string,
+    image: string,
+}
+
 export interface Project {
     _id: string,
     title: string,
-    type: string,
-    description: string,
+    type_EN: string,
+    type_ES: string,
+    description_EN: string,
+    description_ES: string,
     images: string[],
-    technologies: string[],
+    technologies: Techs[],
     link: string[]
 }
 

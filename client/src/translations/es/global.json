@@ -45,5 +45,10 @@
         "contact": "Contactos",
         "phone": "Tlf",
         "networks": "Sígueme"
+    },
+
+    "Error": {
+        "title": "ERROR 404: Página No Encontrada",
+        "text": "Vaya, parece que no podemos encontrar la página que buscas. Intenta volver a la página anterior"
     }
 }

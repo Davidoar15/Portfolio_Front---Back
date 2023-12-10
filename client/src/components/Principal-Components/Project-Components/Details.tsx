@@ -12,6 +12,7 @@ import { NavLink } from "react-router-dom";
 import en from "../../../assets/languages/estados-unidos.png";
 import es from "../../../assets/languages/espana.png";
 import { useTranslation } from "react-i18next";
+import Error from "../../Error";
 
 const Details = ({
   handleLanguageChange,
@@ -96,134 +97,129 @@ const Details = ({
           />
         </div>
       ) : (
-        <div className="flex flex-col justify-center items-center bg-slate-900 min-h-screen">
-          <div className="flex flex-row justify-around items-center w-full">
-            <NavLink to={"/"}>
-              <button className="border-4 border-red-600 my-2 p-1 bg-slate-500 hover:bg-white rounded-xl cursor-pointer">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="icon icon-tabler icon-tabler-home"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
-                  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-                  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
-                </svg>
-              </button>
-            </NavLink>
-            {currentLanguage === "en" ? (
-              <>
-                <img
-                  src={en}
-                  className="w-8 h-8 cursor-pointer"
-                  onClick={() => handleLanguageChange("es")}
-                />
-              </>
-            ) : (
-              <>
-                <img
-                  src={es}
-                  className="w-8 h-8 cursor-pointer"
-                  onClick={() => handleLanguageChange("en")}
-                />
-              </>
-            )}
-          </div>
-
-          <div className="flex flex-col md:flex-row gap-10 mx-5 mt-2">
-            {paginatedImgs?.length ? (
-              <div className="flex flex-col items-center gap-2 md:w-[70%]">
-                <div className="project-item">
-                  {paginatedImgs.map((img, index) => (
+        <>
+          {project ? (
+            <div className="flex flex-col justify-center items-center bg-slate-900 min-h-screen">
+              <div className="flex flex-row justify-around items-center w-full">
+                <NavLink to={"/"}>
+                  <button className="border-4 border-red-600 my-2 p-1 bg-slate-500 hover:bg-white rounded-xl cursor-pointer">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="icon icon-tabler icon-tabler-home"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+                      <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                      <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                    </svg>
+                  </button>
+                </NavLink>
+                {currentLanguage === "en" ? (
+                  <>
                     <img
-                      key={index}
-                      src={img}
-                      alt={`project-img-${index}`}
-                      className="project-image p-2 border-double border-8 rounded-xl border-white"
+                      src={en}
+                      className="w-8 h-8 cursor-pointer"
+                      onClick={() => handleLanguageChange("es")}
                     />
-                  ))}
-                </div>
-                <div className="flex flex-row justify-center gap-4">
-                  {renderPageNumbers()}
-                </div>
+                  </>
+                ) : (
+                  <>
+                    <img
+                      src={es}
+                      className="w-8 h-8 cursor-pointer"
+                      onClick={() => handleLanguageChange("en")}
+                    />
+                  </>
+                )}
               </div>
-            ) : (
-              <h2 className="text-white">
-                There are not Images for this project
-              </h2>
-            )}
 
-            <div className="flex flex-col justify-evenly items-center w-full md:w-96 h-auto mt-5 md:mt-0 b_glow rounded-xl p-4">
-              <h1 className=" text-red-500 text-center font-bold font-mono text-4xl">
-                {project?.title}
-              </h1>
-              <h2 className="text-white font-semibold font-mono text-xl my-5">
-                {project?.type}
-              </h2>
-              <div>
-                <p className="text-white font-mono">{project?.description}</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col justify-center items-center md:flex-row gap-10 mx-5 my-5">
-            <div className="flex flex-col items-center gap-2">
-              <h4 className="text-blue-600 font-semibold font-mono">
-                {t("Details.stack", { lng: currentLanguage })}
-              </h4>
-
-              <div className="flex flex-wrap justify-center items-center px-2 py-1 rounded-ss-3xl rounded-br-3xl b_glow">
-                {project?.technologies ? (
-                  project.technologies.map((tech, index) => (
-                    <div key={index} className="m-2">
+              <div className="flex flex-col md:flex-row gap-10 mx-5 mt-2">
+                <div className="flex flex-col items-center gap-2 md:w-[70%]">
+                  <div className="project-item">
+                    {paginatedImgs?.map((img, index) => (
                       <img
-                        src={tech}
-                        alt={`tech-img-${index}`}
-                        className="h-12 w-12 object-contain"
+                        key={index}
+                        src={img}
+                        alt={`project-img-${index}`}
+                        className="project-image p-2 border-double border-8 rounded-xl border-white"
                       />
-                    </div>
-                  ))
-                ) : (
-                  <h2 className="text-white">
-                    There are not Technologies for this project
-                  </h2>
-                )}
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center w-full md:w-96 mt-5 md:mt-0 gap-2">
-              <h4 className="text-blue-600 font-semibold font-mono">
-                {t("Details.checkOut", { lng: currentLanguage })}
-              </h4>
-
-              <div className="border-double border-4 rounded-xl border-white px-2 py-1">
-                {project?.link ? (
-                  <ul>
-                    {project.link.map((link, index) => (
-                      <Link key={index} to={link}>
-                        <li className="text-white font-mono hover:text-blue-600">
-                          - {link}
-                        </li>
-                      </Link>
                     ))}
-                  </ul>
-                ) : (
-                  <h2 className="text-white">
-                    There are not Links for this project
+                  </div>
+                  <div className="flex flex-row justify-center gap-4">
+                    {renderPageNumbers()}
+                  </div>
+                </div>
+
+                <div className="flex flex-col justify-evenly items-center w-full md:w-96 h-auto mt-5 md:mt-0 b_glow rounded-xl p-4">
+                  <h1 className=" text-red-500 text-center font-bold font-mono text-4xl">
+                    {project?.title}
+                  </h1>
+                  <h2 className="text-white font-semibold font-mono text-xl my-5">
+                    {currentLanguage === "en"
+                      ? project?.type_EN
+                      : project?.type_ES}
                   </h2>
-                )}
+                  <div>
+                    <p className="text-white font-mono">
+                      {currentLanguage === "en"
+                        ? project?.description_EN
+                        : project?.description_ES}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col justify-center items-center md:flex-row gap-10 mx-5 my-5">
+                <div className="flex flex-col items-center gap-2">
+                  <h4 className="text-blue-600 font-semibold font-mono">
+                    {t("Details.stack", { lng: currentLanguage })}
+                  </h4>
+
+                  <div className="flex flex-wrap justify-center items-center px-2 py-1 rounded-ss-3xl rounded-br-3xl b_glow">
+                    {project.technologies.map((tech, index) => (
+                      <div key={index} className="m-2">
+                        <img
+                          src={tech.image}
+                          title={tech.name}
+                          alt={tech.name}
+                          className="h-12 w-12 object-contain cursor-pointer"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-center w-full md:w-96 mt-5 md:mt-0 gap-2">
+                  <h4 className="text-blue-600 font-semibold font-mono">
+                    {t("Details.checkOut", { lng: currentLanguage })}
+                  </h4>
+
+                  <div className="border-double border-4 rounded-xl border-white px-2 py-1">
+                    <ul>
+                      {project.link.map((link, index) => (
+                        <Link key={index} to={link}>
+                          <li className="text-white font-mono hover:text-blue-600">
+                            - {link}
+                          </li>
+                        </Link>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          ) : (
+            <Error currentLanguage={currentLanguage} />
+          )}
+        </>
       )}
     </>
   );

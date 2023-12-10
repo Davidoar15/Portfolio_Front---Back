@@ -14,7 +14,7 @@
 
     "Banner": {
         "title": "Welcome to My Website!",
-        "text": "Nice to mee you! I'm David Olivo Alfonso Rodríguez, Fullstack Web Developer. I'm 21 years old, Venezuelan living in Argentina. I have good capacity to adapt and learn. Very interested in acquire new knowledge. Fan of videogames and tecnologies. Like to analize thoroughly different situations."
+        "text": "Nice to mee you! I'm David Olivo Alfonso Rodríguez, Fullstack Web Developer. I'm 21 years old, Venezuelan living in Argentina. I have good capacity to adapt and learn. Very interested in acquire new knowledge. Fan of videogames and technology. Like to analyze through different situations."
     },
 
     "About": {
@@ -45,5 +45,10 @@
         "contact": "Contacts",
         "phone": "Phone",
         "networks": "Follow Me"
+    },
+
+    "Error": {
+        "title": "ERROR 404: Page Not Found",
+        "text": "Oops, it looks like we can't find the page you're looking for. Try going back to the previous page"
     }
 }
