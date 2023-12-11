@@ -95,9 +95,9 @@ const Contact = ({
           type="submit"
           disabled={isFormEmpty}
           className={`neno-button shadow-xl hover:shadow-red-800/50 text-white border-2 border-red-800 bg-slate-900 rounded-lg py-4 px-8 my-6 uppercase relative overflow-hidden b_glow text-xl font-bold mb-10
-                                ${
-                                  isFormEmpty ? "disabled" : "hover:bg-red-800"
-                                }`}
+                    ${
+                      isFormEmpty ? "disabled" : "hover:bg-red-800"
+                    }`}
         >
           {t("Contact.submit", { lng: currentLanguage })}
         </button>
