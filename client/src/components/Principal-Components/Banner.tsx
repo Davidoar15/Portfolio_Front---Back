@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { FiInstagram } from "react-icons/fi";
-import img from "../../assets/Profile.png";
+import img from "../../assets/images/Banner.jpg";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -29,7 +29,7 @@ const Banner = ({
       <div className="h-full lg:py-20 flex flex-col justify-center lg:items-start items-center text-white">
         <h1
           data-aos="fade-right"
-          className="text-[52px] text-center font-semibold mb-8 leading-normal uppercase"
+          className="text-[52px] text-center text-red-500 font-semibold mb-8 leading-normal uppercase"
         >
           {t("Banner.title", { lng: currentLanguage })}
         </h1>

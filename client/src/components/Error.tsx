@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import errorImage from "../assets/Survey-error-image.png";
+import errorImage from "../assets/resources/Survey-error-image.png";
 import { TypeCurrentLanguage } from "../types";
 
 const Error = ({

@@ -1,4 +1,4 @@
-import img from "../../assets/Profile.png";
+import img from "../../assets/images/Profile.png";
 import CV_EN from "../../assets/CV/CV David Olivo Alfonso Rodríguez (English).pdf";
 import CV_ES from "../../assets/CV/CV David Olivo Alfonso Rodríguez (Español).pdf";
 import { TypeCurrentLanguage } from "../../types";
@@ -41,7 +41,7 @@ const About = ({
       <div className="h-full lg:py-40 flex flex-col justify-center lg:items-start items-center text-white">
         <h1
           data-aos="fade-right"
-          className="text-[52px] text-center font-semibold mb-8 leading-normal text-red-500 uppercase"
+          className="text-[52px] font-semibold mb-8 leading-normal text-red-500 uppercase"
         >
           {t("About.title", { lng: currentLanguage })}
         </h1>
